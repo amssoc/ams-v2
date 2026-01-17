@@ -323,4 +323,53 @@ body {
     font-size: 0.85rem;
     color: #9ca3af;
 }
+.site-footer {
+    background: #0b1220;
+    color: #cbd5e1;
+    padding: 50px 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.footer-logos img {
+    height: 60px;
+    max-width: 160px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
 

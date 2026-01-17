@@ -269,3 +269,58 @@ body {
         padding: 26px 22px;
     }
 }
+/*footer style  */
+/* ===============================
+   FOOTER
+   =============================== */
+
+.site-footer {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 60px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.site-footer h3,
+.site-footer h4 {
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.site-footer p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5f5;
+}
+
+.site-footer a {
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-right a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+

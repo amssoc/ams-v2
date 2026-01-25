@@ -357,3 +357,103 @@ body {
         gap: 25px;
     }
 }
+/* ===============================
+   TEAM PAGE STYLES
+   =============================== */
+
+.team-hero {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+.team-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.team-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.team-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.team-section.light-bg {
+    background: #f8fafc;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #0f172a;
+}
+
+.team-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.center-grid {
+    justify-content: center;
+}
+
+.team-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 26px 22px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.team-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #0f172a;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 14px;
+}
+
+.team-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.team-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.team-links a:hover {
+    text-decoration: underline;
+}
+

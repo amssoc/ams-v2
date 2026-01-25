@@ -461,29 +461,38 @@ body {
 
 /* ================= LEGACY PAGE ================= */
 
-.legacy-section {
+/* =====================================================
+   LEGACY PAGE STYLES (SCOPED & SAFE)
+   ===================================================== */
+
+body.legacy-page .legacy-section {
     padding: 80px 20px;
 }
 
-.legacy-section h2 {
+body.legacy-page .legacy-section h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
 }
 
 /* ===== EVENT RIBBON ===== */
-.event-ribbon {
+body.legacy-page .event-ribbon {
     overflow: hidden;
     position: relative;
+    cursor: grab;
 }
 
-.event-track {
+body.legacy-page .event-ribbon:active {
+    cursor: grabbing;
+}
+
+body.legacy-page .event-track {
     display: flex;
     gap: 20px;
     will-change: transform;
 }
 
-.event-track img {
+body.legacy-page .event-track img {
     height: 180px;
     border-radius: 12px;
     object-fit: cover;
@@ -491,26 +500,29 @@ body {
 }
 
 /* ===== LEGACY TABLES ===== */
-.legacy-table {
+body.legacy-page .legacy-table {
     max-width: 1000px;
     margin: auto;
     overflow-x: auto;
 }
 
-.legacy-table table {
+body.legacy-page .legacy-table table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.legacy-table th,
-.legacy-table td {
+body.legacy-page .legacy-table th,
+body.legacy-page .legacy-table td {
     padding: 12px 14px;
     border: 1px solid #d1d5db;
 }
 
-.legacy-table th {
+body.legacy-page .legacy-table th {
     background: #f8fafc;
     font-weight: 600;
 }
 
-
+/* ===== FOOTER CENTER (LEGACY ONLY) ===== */
+body.legacy-page .site-footer {
+    text-align: center;
+}

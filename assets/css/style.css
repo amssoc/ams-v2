@@ -657,3 +657,43 @@ body.contact-page .site-footer {
     text-align: center;
 }
 
+
+
+/* ===== TIME WIDGET ANIMATIONS ===== */
+
+/* Fade-in when page loads */
+.time-widget {
+    animation: fadeInClock 0.8s ease-out;
+}
+
+/* Subtle pulse every second */
+.time-value {
+    animation: tickPulse 1s infinite;
+}
+
+/* Hover effect */
+.time-widget:hover {
+    transform: translateY(-50%) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Keyframes */
+@keyframes fadeInClock {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+@keyframes tickPulse {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.85; }
+    100% { opacity: 1; }
+}
+
+

@@ -555,6 +555,19 @@ body.legacy-page .site-footer {
     text-decoration: none;
     color: #000;
 }
+/* ===== CONTACT LOGOS ===== */
+.contact-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: transform 0.2s ease;
+}
+
+.contact-card a:hover .contact-logo {
+    transform: scale(1.1);
+}
+
 
 .contact-form-section {
     max-width: 600px;

@@ -695,5 +695,45 @@ body.contact-page .site-footer {
     50%  { opacity: 0.85; }
     100% { opacity: 1; }
 }
+/* ===== FIXED DATE & TIME WIDGET (GLOBAL) ===== */
+.time-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 99999; /* force on top */
+    pointer-events: auto;
+}
+
+.time-date {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.time-value {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Hover polish */
+.time-widget:hover {
+    transform: translateY(-50%) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    transition: all 0.25s ease;
+}
+
+/* Hide ONLY on very small screens */
+@media (max-width: 480px) {
+    .time-widget {
+        display: none;
+    }
+}
 
 

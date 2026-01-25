@@ -13,33 +13,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // AMS v2 main JavaScript
 // ===== FIXED DATE & TIME WIDGET =====
-function updateDateTime() {
-    const now = new Date();
-
-    const timeOptions = {
-        timeZone: "Asia/Kolkata",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-    };
-
-    const dateOptions = {
-        timeZone: "Asia/Kolkata",
-        weekday: "short",
-        day: "2-digit",
-        month: "short",
-        year: "numeric"
-    };
-
+// ===== FIXED DATE & TIME WIDGET =====
+function startTimeWidget() {
     const timeEl = document.getElementById("timeValue");
     const dateEl = document.getElementById("dateValue");
 
-    if (timeEl && dateEl) {
-        timeEl.innerText = now.toLocaleTimeString("en-IN", timeOptions);
-        dateEl.innerText = now.toLocaleDateString("en-IN", dateOptions);
+    if (!timeEl || !dateEl) return;
+
+    function updateDateTime() {
+        const now = new Date();
+
+        timeEl.innerText = now.toLocaleTimeString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+
+        dateEl.innerText = now.toLocaleDateString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            weekday: "short",
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        });
     }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
 }
 
-updateDateTime();
-setInterval(updateDateTime, 1000);
+document.addEventListener("DOMContentLoaded", startTimeWidget);
+
 

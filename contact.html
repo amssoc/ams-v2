@@ -114,17 +114,19 @@
     <p><strong>Applied Mechanics Society (AMS)</strong> | IIT Delhi</p>
 </footer>
 
-    <!-- ===== FIXED DATE & TIME WIDGET ===== -->
+<!-- ===== FIXED DATE & TIME WIDGET ===== -->
 <div class="time-widget" id="timeWidget">
     <div class="time-date" id="dateValue">--</div>
     <div class="time-value" id="timeValue">--:--:--</div>
 </div>
 
-<!-- ================= INLINE JS ================= -->
 <script>
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
     const modal = document.getElementById("contactModal");
     const sendAgain = document.getElementById("sendAgain");
+
+    if (!form || !modal || !sendAgain) return;
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -133,14 +135,16 @@
             method: "POST",
             body: new FormData(form),
             headers: { "Accept": "application/json" }
-        }).then(response => {
+        })
+        .then(response => {
             if (response.ok) {
                 modal.style.display = "flex";
                 form.reset();
             } else {
                 alert("Submission failed. Please email us directly.");
             }
-        }).catch(() => {
+        })
+        .catch(() => {
             alert("Network error. Please try again later.");
         });
     });
@@ -152,7 +156,11 @@
     modal.addEventListener("click", (e) => {
         if (e.target === modal) modal.style.display = "none";
     });
+});
 </script>
+
+<!-- MAIN JS (required for clock & other features) -->
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

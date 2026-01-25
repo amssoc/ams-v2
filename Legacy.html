@@ -137,26 +137,88 @@
 
 <!-- ================= INLINE JS (NO NEW FILE) ================= -->
 <script>
-    const track = document.querySelector(".event-track");
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".legacy-page .event-track");
+    const ribbon = document.querySelector(".legacy-page .event-ribbon");
 
-    if (track) {
-        track.innerHTML += track.innerHTML; // duplicate for infinite loop
+    if (!track || !ribbon) return;
 
-        let speed = 0.5; // controls speed (smaller = slower)
-        let position = 0;
+    // duplicate images for seamless infinite loop
+    track.innerHTML += track.innerHTML;
 
-        function scrollLoop() {
+    let speed = 0.5;
+    let position = 0;
+    let isPaused = false;
+    let isDragging = false;
+    let startX = 0;
+    let startPos = 0;
+
+    // AUTO SCROLL
+    function autoScroll() {
+        if (!isPaused && !isDragging) {
             position -= speed;
             track.style.transform = `translateX(${position}px)`;
 
             if (Math.abs(position) >= track.scrollWidth / 2) {
                 position = 0;
             }
-            requestAnimationFrame(scrollLoop);
         }
-        scrollLoop();
+        requestAnimationFrame(autoScroll);
     }
+
+    // PAUSE ON HOVER
+    ribbon.addEventListener("mouseenter", () => {
+        isPaused = true;
+    });
+
+    ribbon.addEventListener("mouseleave", () => {
+        isPaused = false;
+    });
+
+    // DRAG TO SCROLL (MOUSE)
+    ribbon.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.pageX;
+        startPos = position;
+    });
+
+    ribbon.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        const dx = e.pageX - startX;
+        position = startPos + dx;
+        track.style.transform = `translateX(${position}px)`;
+    });
+
+    ribbon.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
+
+    ribbon.addEventListener("mouseleave", () => {
+        isDragging = false;
+    });
+
+    // TOUCH SUPPORT (MOBILE)
+    ribbon.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX;
+        startPos = position;
+    });
+
+    ribbon.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].pageX - startX;
+        position = startPos + dx;
+        track.style.transform = `translateX(${position}px)`;
+    });
+
+    ribbon.addEventListener("touchend", () => {
+        isDragging = false;
+    });
+
+    autoScroll();
+});
 </script>
+
 
 </body>
 </html>

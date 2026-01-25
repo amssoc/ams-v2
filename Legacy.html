@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // duplicate images for seamless infinite loop
     track.innerHTML += track.innerHTML;
 
-    let speed = 0.5;
+    let speed = 0.3;
     let position = 0;
     let isPaused = false;
     let isDragging = false;
@@ -155,6 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let startPos = 0;
 
     // AUTO SCROLL
+    document.addEventListener("visibilitychange", () => {
+    isPaused = document.hidden;
+    });
+
     function autoScroll() {
         if (!isPaused && !isDragging) {
             position -= speed;

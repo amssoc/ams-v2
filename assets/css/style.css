@@ -639,3 +639,8 @@ body.legacy-page .site-footer {
     background: #e5e7eb;
     color: #000;
 }
+/* ===== CONTACT PAGE FOOTER FIX ===== */
+body.contact-page .site-footer {
+    text-align: center;
+}
+

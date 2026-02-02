@@ -1,25 +1,61 @@
+/* ===============================
+   THEME VARIABLES
+   =============================== */
+
+:root {
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --border-color: #e5e7eb;
+}
+
+html[data-theme="dark"] {
+  --bg-main: #0b1220;
+  --bg-surface: #111827;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-color: #1f2937;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+/* body {
     font-family: "Segoe UI", Arial, sans-serif;
     background-color: #f8fafc;
     color: #0f172a;
     line-height: 1.6;
+} */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
 }
+
 /* ===============================
    NAVIGATION BAR
    =============================== */
 
-.site-header {
+/* .site-header {
     position: sticky;
     top: 0;
     background: #ffffff;
     z-index: 1000;
     border-bottom: 1px solid #e5e7eb;
+} */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-surface);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
@@ -32,26 +68,42 @@ body {
     justify-content: space-between;
 }
 
-.brand a {
+/* .brand a {
     font-size: 1.1rem;
     font-weight: 600;
     color: #0f172a;
     text-decoration: none;
+} */
+.brand a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
 }
+
 
 .nav-links {
     display: flex;
     gap: 22px;
 }
 
-.nav-links a {
+/* .nav-links a {
     text-decoration: none;
     color: #334155;
     font-size: 0.95rem;
     font-weight: 500;
     position: relative;
     padding-bottom: 4px;
+} */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
 }
+
 
 /* underline effect */
 .nav-links a::after {

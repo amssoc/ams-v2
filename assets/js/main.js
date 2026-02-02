@@ -45,4 +45,30 @@ function startTimeWidget() {
 
 document.addEventListener("DOMContentLoaded", startTimeWidget);
 
+// ===== DARK / LIGHT MODE TOGGLE =====
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("theme-toggle");
+
+    if (!toggleBtn) return;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        toggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+    }
+
+    toggleBtn.addEventListener("click", function () {
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme") === "dark"
+                ? "light"
+                : "dark";
+
+        document.documentElement.setAttribute("data-theme", currentTheme);
+        localStorage.setItem("theme", currentTheme);
+        toggleBtn.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+    });
+});
+
+
 

@@ -736,4 +736,14 @@ body.contact-page .site-footer {
     }
 }
 
+/* dark mode tooglle button  */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-btn {
+  margin-left: 1rem;
+}
 
